@@ -74,7 +74,10 @@ function onError(error) {
       break;
     case 'EADDRINUSE':
       console.error(bind + ' is already in use');
-      process.exit(1);
+      setTimeout(() => {
+        server.close();
+        server.listen(PORT, HOST);
+      }, 1000);
       break;
     default:
       throw error;
