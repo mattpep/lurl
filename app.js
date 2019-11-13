@@ -13,7 +13,7 @@ app.use(logger('dev'))
 
 // no routes have been set up, so we'll capture the URL path and look that up in redis for the final URL
 app.use(function (req, res, next) {
-  redis.get(req.path, function (err, target) {
+  redis.get(req.path.substr(1), function (err, target) {
     if (err) {
       res.status = 500
       res.render('error', {
