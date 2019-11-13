@@ -16,7 +16,7 @@ Two optional environent variables exist:
 * `REDIS_URL` - the location of the redis server: `redis://[:password@]host[:port][/db-number]`
 * `PORT` - the TCP port on which to run the app (You won't need to set this if using docker)
 
-The key is specified as the URL segment immediately after the nodename. No queerystring parameters are used.
+The key is specified as the URL segment immediately after the nodename. No querystring parameters are used.
 
 # License
 
