@@ -23,10 +23,18 @@ app.use(function (req, res, next) {
       return
     }
     if (!target) {
-      res.status = 404
-      res.render('404', {
-        key: req.path
-      })
+      if (req.path == '/') {
+        res.status = 200
+        res.render('index', {
+          title: 'lURL'
+        })
+      } else {
+        res.status = 404
+        res.render('404', {
+          title: 'lURL',
+          key: req.path
+        })
+      }
       return
     }
 
